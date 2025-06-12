@@ -12,17 +12,36 @@ await using ServiceBusClient client = new(_connectionString);
 ServiceBusSender sender = client.CreateSender(queueName);
 
 // create a message that we can send. UTF-8 encoding is used when providing a string.
-ServiceBusMessage message = new("Hello world!");
+ServiceBusMessage message = new("Hello world! OK1");
 
 // send the message
 await sender.SendMessageAsync(message);
 
-// create a receiver that we can use to receive the message
-ServiceBusReceiver receiver = client.CreateReceiver(queueName);
+// Create a ServiceBusProcessor for the queue.
+await using ServiceBusProcessor processor = client.CreateProcessor(
+    queueName,
+    new ServiceBusProcessorOptions
+    {
 
-// the received message is a different type as it contains some service set properties
-ServiceBusReceivedMessage receivedMessage = await receiver.ReceiveMessageAsync();
+    });
 
-// get the message body as a string
-string body = receivedMessage.Body.ToString();
-Console.WriteLine(body);
+// Specify handler methods for messages and errors.
+processor.ProcessMessageAsync += MessageHandler;
+
+async Task MessageHandler(ProcessMessageEventArgs args)
+{
+    ServiceBusReceivedMessage receivedMessage = args.Message;
+
+    // get the message body as a string
+    string body = receivedMessage.Body.ToString();
+    Console.WriteLine(body); Console.WriteLine($"Receive message: {body}");
+
+    await args.CompleteMessageAsync(args.Message);
+}
+
+processor.ProcessErrorAsync += ErrorHandler;
+
+async Task ErrorHandler(ProcessErrorEventArgs args)
+{
+    Console.WriteLine($"Error {args.FullyQualifiedNamespace}");
+}
