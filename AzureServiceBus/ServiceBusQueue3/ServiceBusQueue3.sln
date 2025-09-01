@@ -1,0 +1,27 @@
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.0.31903.59
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ServiceBusQueue3.Sender", "ServiceBusQueue3.Sender\ServiceBusQueue3.Sender.csproj", "{L2M3N4O5-P6Q7-8901-LMNO-P23456789012}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ServiceBusQueue3.Receiver", "ServiceBusQueue3.Receiver\ServiceBusQueue3.Receiver.csproj", "{M3N4O5P6-Q7R8-9012-MNOP-Q34567890123}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{L2M3N4O5-P6Q7-8901-LMNO-P23456789012}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{L2M3N4O5-P6Q7-8901-LMNO-P23456789012}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{L2M3N4O5-P6Q7-8901-LMNO-P23456789012}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{L2M3N4O5-P6Q7-8901-LMNO-P23456789012}.Release|Any CPU.Build.0 = Release|Any CPU
+		{M3N4O5P6-Q7R8-9012-MNOP-Q34567890123}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{M3N4O5P6-Q7R8-9012-MNOP-Q34567890123}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{M3N4O5P6-Q7R8-9012-MNOP-Q34567890123}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{M3N4O5P6-Q7R8-9012-MNOP-Q34567890123}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal
