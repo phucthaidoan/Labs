@@ -1,0 +1,21 @@
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.0.31903.59
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ServiceBusQueue1", "ServiceBusQueue1.csproj", "{I9J0K1L2-M3N4-5678-IJKL-M90123456789}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{I9J0K1L2-M3N4-5678-IJKL-M90123456789}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{I9J0K1L2-M3N4-5678-IJKL-M90123456789}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{I9J0K1L2-M3N4-5678-IJKL-M90123456789}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{I9J0K1L2-M3N4-5678-IJKL-M90123456789}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal

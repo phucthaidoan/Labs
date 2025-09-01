@@ -48,9 +48,15 @@ This workspace demonstrates various architectural patterns and technologies:
 Labs/
 ├── solution/audit/audit-01/          # Audit logging solution
 ├── azure-service-bus/                # Service Bus examples
+│   ├── Queue4.Session/              # Session-enabled queues
+│   ├── Queue4.Session.FIFO/         # FIFO session queues
+│   └── Topic2.Processor/            # Topic processing patterns
 ├── AzureServiceBus/                  # Additional Service Bus patterns
-├── solution/azure-durable-function-01/ # Durable Functions examples
-└── Labs.sln                         # Main solution file
+│   ├── ServiceBusQueue1/            # Basic queue implementation
+│   ├── ServiceBusQueue2/            # Advanced queue patterns
+│   ├── ServiceBusQueue3/            # Sender/Receiver pattern
+│   └── ServiceBusTopic1/            # Topic and subscription
+└── solution/azure-durable-function-01/ # Durable Functions examples
 ```
 
 ## 🚀 Getting Started
@@ -63,10 +69,7 @@ Labs/
 
 ### Building Solutions
 
-#### Main Labs Solution
-```bash
-dotnet build Labs.sln
-```
+Each solution can be built independently:
 
 #### Audit Logging Solution
 ```bash
@@ -75,9 +78,47 @@ dotnet build AuditLogging.sln
 ```
 
 #### Azure Service Bus Examples
+
+**Queue4.Session (Session-enabled queues):**
 ```bash
-cd azure-service-bus
-dotnet build
+cd azure-service-bus/Queue4.Session
+dotnet build Queue4.Session.sln
+```
+
+**Queue4.Session.FIFO (FIFO session queues):**
+```bash
+cd azure-service-bus/Queue4.Session.FIFO
+dotnet build Queue4.Session.FIFO.sln
+```
+
+**Topic2.Processor (Topic processing):**
+```bash
+cd azure-service-bus/Topic2.Processor
+dotnet build Topic2.Processor.sln
+```
+
+**ServiceBusQueue1 (Basic queue):**
+```bash
+cd AzureServiceBus/ServiceBusQueue1
+dotnet build ServiceBusQueue1.sln
+```
+
+**ServiceBusQueue2 (Advanced queue):**
+```bash
+cd AzureServiceBus/ServiceBusQueue2
+dotnet build ServiceBusQueue2.sln
+```
+
+**ServiceBusQueue3 (Sender/Receiver):**
+```bash
+cd AzureServiceBus/ServiceBusQueue3
+dotnet build ServiceBusQueue3.sln
+```
+
+**ServiceBusTopic1 (Topic and subscription):**
+```bash
+cd AzureServiceBus/ServiceBusTopic1
+dotnet build ServiceBusTopic1.sln
 ```
 
 #### Durable Functions
