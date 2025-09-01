@@ -1,0 +1,57 @@
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.14.36127.28
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "AuditLogging", "AuditLogging", "{2C3B98F3-E16E-40EC-A123-3C4A8A9EC9E8}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AuditLogging.Core", "AuditLogging.Core\AuditLogging.Core.csproj", "{B0A309D1-18BC-4E53-D0C8-1D709150BDC3}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AuditLogging.Infrastructure", "AuditLogging.Infrastructure\AuditLogging.Infrastructure.csproj", "{7DA061BD-309F-D49B-60A5-614E014CF896}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AuditLogging.Services", "AuditLogging.Services\AuditLogging.Services.csproj", "{F85B26F6-945E-D66A-C169-01AB40EBBBD0}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AuditLogging.API", "AuditLogging.API\AuditLogging.API.csproj", "{95B6B541-5A34-B1C2-4CC4-644777F61972}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AuditLogging.Archiver", "AuditLogging.Archiver\AuditLogging.Archiver.csproj", "{21992F3C-BF29-A3B7-EE1E-5823C0CD4B09}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{B0A309D1-18BC-4E53-D0C8-1D709150BDC3}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{B0A309D1-18BC-4E53-D0C8-1D709150BDC3}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{B0A309D1-18BC-4E53-D0C8-1D709150BDC3}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{B0A309D1-18BC-4E53-D0C8-1D709150BDC3}.Release|Any CPU.Build.0 = Release|Any CPU
+		{7DA061BD-309F-D49B-60A5-614E014CF896}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{7DA061BD-309F-D49B-60A5-614E014CF896}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{7DA061BD-309F-D49B-60A5-614E014CF896}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{7DA061BD-309F-D49B-60A5-614E014CF896}.Release|Any CPU.Build.0 = Release|Any CPU
+		{F85B26F6-945E-D66A-C169-01AB40EBBBD0}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{F85B26F6-945E-D66A-C169-01AB40EBBBD0}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{F85B26F6-945E-D66A-C169-01AB40EBBBD0}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{F85B26F6-945E-D66A-C169-01AB40EBBBD0}.Release|Any CPU.Build.0 = Release|Any CPU
+		{95B6B541-5A34-B1C2-4CC4-644777F61972}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{95B6B541-5A34-B1C2-4CC4-644777F61972}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{95B6B541-5A34-B1C2-4CC4-644777F61972}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{95B6B541-5A34-B1C2-4CC4-644777F61972}.Release|Any CPU.Build.0 = Release|Any CPU
+		{21992F3C-BF29-A3B7-EE1E-5823C0CD4B09}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{21992F3C-BF29-A3B7-EE1E-5823C0CD4B09}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{21992F3C-BF29-A3B7-EE1E-5823C0CD4B09}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{21992F3C-BF29-A3B7-EE1E-5823C0CD4B09}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{B0A309D1-18BC-4E53-D0C8-1D709150BDC3} = {2C3B98F3-E16E-40EC-A123-3C4A8A9EC9E8}
+		{7DA061BD-309F-D49B-60A5-614E014CF896} = {2C3B98F3-E16E-40EC-A123-3C4A8A9EC9E8}
+		{F85B26F6-945E-D66A-C169-01AB40EBBBD0} = {2C3B98F3-E16E-40EC-A123-3C4A8A9EC9E8}
+		{95B6B541-5A34-B1C2-4CC4-644777F61972} = {2C3B98F3-E16E-40EC-A123-3C4A8A9EC9E8}
+		{21992F3C-BF29-A3B7-EE1E-5823C0CD4B09} = {2C3B98F3-E16E-40EC-A123-3C4A8A9EC9E8}
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {9BD6FBD7-64F4-4690-8A1D-10DFAFD12D21}
+	EndGlobalSection
+EndGlobal

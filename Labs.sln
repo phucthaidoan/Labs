@@ -43,6 +43,7 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "azure-function-durable-01",
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DurableFunctionSolution1", "solution\azure-durable-function-01\DurableFunctionSolution1\DurableFunctionSolution1.csproj", "{672B50A8-FB19-4836-804C-3FF6A14A6A3A}"
 EndProject
+
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
