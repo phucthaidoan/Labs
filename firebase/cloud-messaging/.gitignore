@@ -1,0 +1,80 @@
+# Firebase Credentials (CRITICAL - DO NOT COMMIT!)
+**/firebase-adminsdk*.json
+**/google-services.json
+**/GoogleService-Info.plist
+
+# Build Outputs
+**/bin/
+**/obj/
+**/out/
+**/dist/
+
+# Logs
+logs/
+*.log
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+
+# IDEs
+.vs/
+.vscode/
+.idea/
+*.suo
+*.user
+*.userosscache
+*.sln.docstates
+*.swp
+*.swo
+*~
+
+# Node
+node_modules/
+package-lock.json
+yarn.lock
+
+# Environment files
+.env
+.env.local
+.env.development.local
+.env.test.local
+.env.production.local
+
+# OS Files
+.DS_Store
+Thumbs.db
+desktop.ini
+
+# React Native / Mobile
+# iOS
+**/ios/Pods/
+**/ios/build/
+**/ios/*.xcworkspace
+**/ios/*.xcuserstate
+
+# Android
+**/android/build/
+**/android/.gradle/
+**/android/app/build/
+**/android/.idea/
+**/android/local.properties
+**/android/captures/
+**/.externalNativeBuild/
+
+# Testing
+coverage/
+*.cover
+.coverage
+.pytest_cache/
+
+# Database
+*.db
+*.sqlite
+*.sqlite3
+
+# Temp files
+tmp/
+temp/
+*.tmp
+*.bak
+*.cache

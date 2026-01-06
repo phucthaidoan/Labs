@@ -1,0 +1,184 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>FCM Demo - Firebase Cloud Messaging</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>🔔 Firebase Cloud Messaging Demo</h1>
+            <p class="subtitle">ASP.NET Core 9 + Web Client</p>
+        </header>
+
+        <main>
+            <!-- Permission Section -->
+            <section class="card">
+                <h2>1. Request Notification Permission</h2>
+                <p class="description">First, request permission to show notifications in your browser.</p>
+                <div class="status-container">
+                    <span class="label">Permission Status:</span>
+                    <span id="permissionStatus" class="status">Unknown</span>
+                </div>
+                <button id="requestPermissionBtn" class="btn btn-primary">Request Permission</button>
+            </section>
+
+            <!-- Token Section -->
+            <section class="card">
+                <h2>2. Get FCM Token</h2>
+                <p class="description">Generate your Firebase Cloud Messaging token.</p>
+                <div class="token-display">
+                    <label for="fcmToken">FCM Token:</label>
+                    <div class="token-input-group">
+                        <input type="text" id="fcmToken" readonly placeholder="Token will appear here...">
+                        <button id="copyTokenBtn" class="btn btn-secondary">Copy</button>
+                    </div>
+                </div>
+                <button id="getTokenBtn" class="btn btn-primary">Get Token</button>
+            </section>
+
+            <!-- Registration Section -->
+            <section class="card">
+                <h2>3. Register Token with Backend</h2>
+                <p class="description">Register your token with the ASP.NET Core API.</p>
+                <form id="registerForm" class="form">
+                    <div class="form-group">
+                        <label for="userId">User ID:</label>
+                        <input type="text" id="userId" placeholder="e.g., test-user-1" value="test-user-1">
+                    </div>
+                    <div class="form-group">
+                        <label for="deviceId">Device ID:</label>
+                        <input type="text" id="deviceId" placeholder="e.g., web-browser-1" value="web-browser-1">
+                    </div>
+                    <button type="submit" class="btn btn-primary">Register Token</button>
+                </form>
+                <div id="registerStatus" class="message"></div>
+            </section>
+
+            <!-- Send Notification Section -->
+            <section class="card">
+                <h2>4. Send Test Notification</h2>
+                <p class="description">Send notifications to your own device.</p>
+                <form id="sendNotificationForm" class="form">
+                    <div class="form-group">
+                        <label for="notifTitle">Title:</label>
+                        <input type="text" id="notifTitle" placeholder="Notification Title" value="Hello from FCM!">
+                    </div>
+                    <div class="form-group">
+                        <label for="notifBody">Body:</label>
+                        <textarea id="notifBody" placeholder="Notification message" rows="3">This is a test notification from the FCM Demo app.</textarea>
+                    </div>
+                    <div class="button-group">
+                        <button type="submit" class="btn btn-primary">Send Simple Notification</button>
+                        <button type="button" id="sendWithDataBtn" class="btn btn-secondary">Send with Data</button>
+                    </div>
+                </form>
+                <div id="sendStatus" class="message"></div>
+            </section>
+
+            <!-- Received Notifications Section -->
+            <section class="card">
+                <h2>5. Received Notifications</h2>
+                <p class="description">Notifications received while the app is open.</p>
+                <div id="notificationsList" class="notifications-list">
+                    <p class="empty-state">No notifications received yet.</p>
+                </div>
+                <button id="clearNotificationsBtn" class="btn btn-secondary">Clear All</button>
+            </section>
+
+            <!-- Schedule Notification Section -->
+            <section class="card">
+                <h2>6. Schedule Notification</h2>
+                <p class="description">Schedule a notification for future delivery.</p>
+                <form id="scheduleNotificationForm" class="form">
+                    <div class="form-group">
+                        <label for="scheduleTitle">Title:</label>
+                        <input type="text" id="scheduleTitle" placeholder="Scheduled notification" value="Scheduled Reminder">
+                    </div>
+                    <div class="form-group">
+                        <label for="scheduleBody">Body:</label>
+                        <textarea id="scheduleBody" placeholder="Notification message" rows="2">Your scheduled notification is ready!</textarea>
+                    </div>
+                    <div class="form-group">
+                        <label for="scheduleTime">Scheduled For:</label>
+                        <input type="datetime-local" id="scheduleTime" required>
+                    </div>
+                    <button type="submit" class="btn btn-primary">Schedule Notification</button>
+                </form>
+                <div id="scheduleStatus" class="message"></div>
+
+                <div class="scheduled-list-container">
+                    <h3>Scheduled Notifications</h3>
+                    <button id="refreshScheduledBtn" class="btn btn-secondary btn-sm">Refresh</button>
+                    <div id="scheduledList" class="scheduled-list">
+                        <p class="empty-state">No scheduled notifications.</p>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Notification History Section -->
+            <section class="card">
+                <h2>7. Notification History</h2>
+                <p class="description">View sent notification history and statistics.</p>
+
+                <div id="notificationStats" class="stats-container">
+                    <div class="stat-card">
+                        <span class="stat-label">Total Sent</span>
+                        <span class="stat-value" id="statTotalSent">0</span>
+                    </div>
+                    <div class="stat-card">
+                        <span class="stat-label">Successful</span>
+                        <span class="stat-value" id="statSuccessful">0</span>
+                    </div>
+                    <div class="stat-card">
+                        <span class="stat-label">Failed</span>
+                        <span class="stat-value" id="statFailed">0</span>
+                    </div>
+                    <div class="stat-card">
+                        <span class="stat-label">Success Rate</span>
+                        <span class="stat-value" id="statSuccessRate">0%</span>
+                    </div>
+                </div>
+
+                <div class="history-controls">
+                    <button id="refreshHistoryBtn" class="btn btn-secondary">Refresh History</button>
+                    <button id="loadMoreHistoryBtn" class="btn btn-secondary">Load More</button>
+                </div>
+
+                <div id="historyList" class="history-list">
+                    <p class="empty-state">No notification history available.</p>
+                </div>
+            </section>
+
+            <!-- Instructions Section -->
+            <section class="card info">
+                <h2>📖 How to Use</h2>
+                <ol>
+                    <li><strong>Request Permission:</strong> Click "Request Permission" and allow notifications in your browser.</li>
+                    <li><strong>Get Token:</strong> Click "Get Token" to generate your FCM token.</li>
+                    <li><strong>Register Token:</strong> Enter your User ID and Device ID, then click "Register Token".</li>
+                    <li><strong>Send Notification:</strong> Fill in the notification details and click "Send".</li>
+                    <li><strong>Schedule Notification:</strong> Set a future date/time and schedule a notification for later delivery.</li>
+                    <li><strong>View History:</strong> Check your notification history and statistics.</li>
+                    <li><strong>Test Background:</strong> Minimize or switch tabs, then send a notification via Swagger UI.</li>
+                </ol>
+                <div class="api-info">
+                    <strong>API Endpoint:</strong> <a href="https://localhost:7001" target="_blank">https://localhost:7001</a><br>
+                    <strong>Swagger UI:</strong> <a href="https://localhost:7001" target="_blank">https://localhost:7001</a>
+                </div>
+            </section>
+        </main>
+
+        <footer>
+            <p>Firebase Cloud Messaging Demo | Built with ASP.NET Core 9 & Firebase JS SDK</p>
+        </footer>
+    </div>
+
+    <!-- Firebase SDK -->
+    <script type="module" src="firebase-config.js"></script>
+    <script type="module" src="api-service.js"></script>
+    <script type="module" src="app.js"></script>
+</body>
+</html>

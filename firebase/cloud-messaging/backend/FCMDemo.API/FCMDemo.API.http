@@ -1,0 +1,6 @@
+@FCMDemo.API_HostAddress = http://localhost:5276
+
+GET {{FCMDemo.API_HostAddress}}/weatherforecast/
+Accept: application/json
+
+###
